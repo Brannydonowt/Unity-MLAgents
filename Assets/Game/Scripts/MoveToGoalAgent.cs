@@ -37,6 +37,8 @@ public class MoveToGoalAgent : Agent
         float moveSpeed = 5f;
 
         transform.position += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
+
+        AddReward(-1f / MaxStep);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

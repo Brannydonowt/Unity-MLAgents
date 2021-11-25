@@ -328,11 +328,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94299167d8549744da812f0c2097408f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  classToSpawn: {fileID: 2614427451801006347, guid: fc557a568eec35e4cad00dd79b19c05a, type: 3}
+  classToSpawn: {fileID: 2614427451801006347, guid: 47ceb3abba653dd4b9819f3770ac644d, type: 3}
   numToSpawn: 16
   numColumns: 4
-  xSpacing: 10
-  zSpacing: 10
+  xSpacing: 5
+  zSpacing: 15
+  mainCam: {fileID: 963194225}
+  currentCam: {fileID: 0}
+  classCamMode: 0
+  classes: []
+  currentClass: {fileID: 0}
+  currentClassId: 0
+  currentClassCam: 0
 --- !u!4 &1655229072
 Transform:
   m_ObjectHideFlags: 0

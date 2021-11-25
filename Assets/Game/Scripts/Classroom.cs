@@ -17,13 +17,21 @@ public class Classroom : MonoBehaviour
     public GameObject agent;
     public GameObject goal;
 
-    float agentMinSpawnX, agentMaxSpawnX;
-    float agentMinSpawnZ, agentMaxSpawnZ;
-    float goalMinSpawnX, goalMaxSpawnX;
-    float goalMinSpawnZ, goalMaxSpawnZ;
+    public float agentMinSpawnX, agentMaxSpawnX;
+    public float agentMinSpawnZ, agentMaxSpawnZ;
+    public float goalMinSpawnX, goalMaxSpawnX;
+    public float goalMinSpawnZ, goalMaxSpawnZ;
+
+    public GameObject[] classCams;
+
+    private void Start() {
+        ResetClassroom();
+    }
 
     public void ResetClassroom()
     {
+        GetClassRoomSize();
+
         if (randomAgentSpawn)
             agent.transform.localPosition = GetRandAgentSpawn(classSize.y);
         else
@@ -47,8 +55,8 @@ public class Classroom : MonoBehaviour
 
     public Vector2 GetClassRoomSize()
     {        
-        classSize = Vector3.Scale(transform.localScale, platform.GetComponent<MeshRenderer>().bounds.size);
-
+        //classSize = Vector3.Scale(platform.transform.localScale, platform.GetComponent<MeshRenderer>().bounds.size);
+        classSize = platform.GetComponent<MeshRenderer>().bounds.size;
         return classSize;
     }
 }
