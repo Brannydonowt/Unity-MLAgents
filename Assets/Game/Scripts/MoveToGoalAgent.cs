@@ -7,23 +7,20 @@ using Unity.MLAgents.Sensors;
 
 public class MoveToGoalAgent : Agent
 {
+    [SerializeField]private Classroom myClass;
     [SerializeField]private Transform goalTransform;
     [SerializeField]private Material winMat, lostMat;
     [SerializeField]private MeshRenderer floorRenderer;
     [SerializeField]private bool randomSpawn;
 
+    private void Awake() 
+    {
+        myClass = GetComponentInParent<Classroom>();   
+    }
+
     public override void OnEpisodeBegin()
     {
-        if (randomSpawn)
-        {
-            transform.localPosition = new Vector3(-6f, 2, -1);
-            //transform.localPosition = new Vector3(Random.Range(-6f, -0.5f), 2, Random.Range(-7, 5));
-            goalTransform.localPosition = new Vector3(Random.Range(3f, 8f), 2, Random.Range(-6, 5));
-        } 
-        else 
-        {
-            transform.localPosition = new Vector3(-6f, 2, -1);
-        }
+        myClass.ResetClassroom();
     }
 
     public override void CollectObservations(VectorSensor sensor)

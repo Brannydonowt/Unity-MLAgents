@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2614427450173010448}
   m_LocalRotation: {x: -0, y: 0.19694312, z: -0, w: 0.9804149}
-  m_LocalPosition: {x: 8.19, y: 2, z: -6.57}
+  m_LocalPosition: {x: 8, y: 2, z: -6}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 2614427451801006340}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 2614427450258698214}
   - component: {fileID: 2614427450258698215}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Agent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -339,6 +339,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 2000
+  myClass: {fileID: 0}
   goalTransform: {fileID: 2614427450173010476}
   winMat: {fileID: 2100000, guid: b45029addd8ac994cbad017613b039d6, type: 2}
   lostMat: {fileID: 2100000, guid: 256980c0684a70f49a82a4daff07d6af, type: 2}
@@ -448,6 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2614427451801006340}
+  - component: {fileID: 7282199260749288131}
   m_Layer: 0
   m_Name: c_MoveToGoal
   m_TagString: Untagged
@@ -473,6 +475,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7282199260749288131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2614427451801006347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648cda5307557464fbcab70d55d60d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomAgentSpawn: 0
+  randomGoalSpawn: 0
+  setAgentSpawn: {x: -6, y: 2, z: 2}
+  setGoalSpawn: {x: 8, y: 2, z: -6}
+  platform: {fileID: 2614427451875284492}
+  classSize: {x: 0, y: 0, z: 0}
+  agent: {fileID: 2614427450258698223}
+  goal: {fileID: 2614427450173010448}
 --- !u!1 &2614427451875284492
 GameObject:
   m_ObjectHideFlags: 0
