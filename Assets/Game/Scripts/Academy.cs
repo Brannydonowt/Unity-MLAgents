@@ -4,6 +4,7 @@ using System.Collections.Generic;
 // The academy will be responsible for spawning classrooms in the correct positions
 public class Academy : MonoBehaviour 
 {
+    public AcademyUI ui;
     public GameObject classToSpawn;
     
     public int numToSpawn;
@@ -30,6 +31,7 @@ public class Academy : MonoBehaviour
     {
         Classroom c = classToSpawn.GetComponent<Classroom>();
         Vector3 cSize = c.GetClassRoomSize();
+        ui.SetClassType(classToSpawn.name);
 
         float xDist = 0;
         float zDist = 0;
@@ -49,6 +51,8 @@ public class Academy : MonoBehaviour
             classes.Add(newClass.GetComponent<Classroom>());
         }
 
+        print(cSize.z);
+
         SetCamera(cSize);
     }
 
@@ -65,6 +69,9 @@ public class Academy : MonoBehaviour
         currentClass = classes[0];
         currentClassId = 0;
         currentCam = mainCam;
+
+        ui.SetClassName("All classes");
+        ui.SetCamName(currentCam.name);
     }
 
     private void Update()
@@ -74,6 +81,7 @@ public class Academy : MonoBehaviour
         {
             classCamMode = true;
             ChangeActiveCamera(currentClass.classCams[currentClassCam]);
+            ui.SetClassName("Classroom " + (currentClassId + 1));
         }
 
         // Enable main cam mode
@@ -81,6 +89,7 @@ public class Academy : MonoBehaviour
         {
             classCamMode = false;
             ChangeActiveCamera(mainCam);
+            ui.SetClassName("All classes");
         }
 
         if (Input.GetKeyDown(KeyCode.LeftBracket))
@@ -102,6 +111,7 @@ public class Academy : MonoBehaviour
         currentCam.SetActive(false);
         currentCam = cam;
         currentCam.SetActive(true);
+        ui.SetCamName(currentCam.name);
     }
 
     void ChangeCurrentClass(bool updown)
@@ -125,8 +135,10 @@ public class Academy : MonoBehaviour
             currentClass = classes[currentClassId];
         }
 
-        if (classCamMode)
+        if (classCamMode){
             ChangeActiveCamera(currentClass.classCams[currentClassCam]);
+            ui.SetClassName("Classroom " + (currentClassId + 1));
+        }
     }
 
     GameObject GetNextClassCamera(bool updown)
@@ -152,6 +164,7 @@ public class Academy : MonoBehaviour
                 currentClassCam --;
         }
 
+        ui.SetCamName(currentClass.classCams[currentClassCam].name);
         return currentClass.classCams[currentClassCam];
     }
 }

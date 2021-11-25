@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AcademyUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TextMeshProUGUI classType, className, camName;
+
+    public void SetClassType(string s)
     {
-        
+        classType.text = s;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetClassName(string s)
     {
-        
+        className.text = s;
+    }
+
+    public void SetCamName(string s)
+    {
+        camName.text = s;
     }
 }
