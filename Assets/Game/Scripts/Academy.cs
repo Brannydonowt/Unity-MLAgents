@@ -6,7 +6,7 @@ public class Academy : MonoBehaviour
     public GameObject classToSpawn;
     
     public int numToSpawn;
-    public int numRows;
+    public int numColumns;
     
     public float xSpacing;
     public float zSpacing;
@@ -28,7 +28,7 @@ public class Academy : MonoBehaviour
         {
             xDist += (cSize.x + xSpacing);
 
-            if (i % numRows == 0)
+            if (i % numColumns == 0)
             {
                 xDist = 0;
                 zDist += (cSize.z + zSpacing);
@@ -38,6 +38,17 @@ public class Academy : MonoBehaviour
             GameObject newClass = Instantiate(classToSpawn, spawn, Quaternion.identity);
         }
 
+        SetCamera(cSize);
+    }
 
+    void SetCamera(Vector3 cSize)
+    {
+        float academyX = numColumns * (cSize.x + xSpacing / 2);
+        float academyY = (numToSpawn / numColumns) * (cSize.z + zSpacing);
+
+        print (academyX);
+        print(academyY);
+
+        Camera.main.transform.position = new Vector3(academyX / 2, 15, academyY / 2);
     }
 }
