@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wall
   - Goal
+  - Chaser
+  - Runner
   layers:
   - Default
   - TransparentFX

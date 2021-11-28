@@ -875,9 +875,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1655229073}
-  classToSpawn: {fileID: 2614427451801006347, guid: 47ceb3abba653dd4b9819f3770ac644d, type: 3}
-  numToSpawn: 16
-  numColumns: 4
+  classToSpawn: {fileID: 2614427451801006347, guid: 8cd411dfb2da43343bb6b96816bb6299, type: 3}
+  numToSpawn: 2
+  numColumns: 1
   xSpacing: 10
   zSpacing: 30
   mainCam: {fileID: 963194225}

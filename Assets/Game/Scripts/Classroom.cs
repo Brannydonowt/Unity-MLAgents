@@ -24,8 +24,9 @@ public class Classroom : MonoBehaviour
 
     public GameObject[] classCams;
 
-    private void Start() {
-        ResetClassroom();
+    private void Start() 
+    {
+        //ResetClassroom();
     }
 
     public void ResetClassroom()
