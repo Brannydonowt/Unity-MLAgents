@@ -1,0 +1,105 @@
+{
+    "TagChaser": {
+        "checkpoints": [
+            {
+                "steps": 1971,
+                "file_path": "results\\Tag1\\TagChaser\\TagChaser-1971.onnx",
+                "reward": -103.47499966621399,
+                "creation_time": 1638125630.8713758,
+                "auxillary_file_paths": [
+                    "results\\Tag1\\TagChaser\\TagChaser-1971.pt"
+                ]
+            },
+            {
+                "steps": 13889,
+                "file_path": "results\\Tag1\\TagChaser\\TagChaser-13889.onnx",
+                "reward": 38.500000993410744,
+                "creation_time": 1638125973.764887,
+                "auxillary_file_paths": [
+                    "results\\Tag1\\TagChaser\\TagChaser-13889.pt"
+                ]
+            },
+            {
+                "steps": 499984,
+                "file_path": "results\\Tag1\\TagChaser\\TagChaser-499984.onnx",
+                "reward": -4.914924621582031,
+                "creation_time": 1638127973.082336,
+                "auxillary_file_paths": [
+                    "results\\Tag1\\TagChaser\\TagChaser-499984.pt"
+                ]
+            },
+            {
+                "steps": 500060,
+                "file_path": "results\\Tag1\\TagChaser\\TagChaser-500060.onnx",
+                "reward": -6.141175774966969,
+                "creation_time": 1638127973.1896145,
+                "auxillary_file_paths": [
+                    "results\\Tag1\\TagChaser\\TagChaser-500060.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500060,
+            "file_path": "results\\Tag1\\TagChaser.onnx",
+            "reward": -6.141175774966969,
+            "creation_time": 1638127973.1896145,
+            "auxillary_file_paths": [
+                "results\\Tag1\\TagChaser\\TagChaser-500060.pt"
+            ]
+        }
+    },
+    "TagRunner": {
+        "checkpoints": [
+            {
+                "steps": 2165,
+                "file_path": "results\\Tag1\\TagRunner\\TagRunner-2165.onnx",
+                "reward": -109.76000312566757,
+                "creation_time": 1638125630.915261,
+                "auxillary_file_paths": [
+                    "results\\Tag1\\TagRunner\\TagRunner-2165.pt"
+                ]
+            },
+            {
+                "steps": 14467,
+                "file_path": "results\\Tag1\\TagRunner\\TagRunner-14467.onnx",
+                "reward": 6.400005340576172,
+                "creation_time": 1638125973.812713,
+                "auxillary_file_paths": [
+                    "results\\Tag1\\TagRunner\\TagRunner-14467.pt"
+                ]
+            },
+            {
+                "steps": 499998,
+                "file_path": "results\\Tag1\\TagRunner\\TagRunner-499998.onnx",
+                "reward": 35.32500243186951,
+                "creation_time": 1638127970.6194587,
+                "auxillary_file_paths": [
+                    "results\\Tag1\\TagRunner\\TagRunner-499998.pt"
+                ]
+            },
+            {
+                "steps": 500713,
+                "file_path": "results\\Tag1\\TagRunner\\TagRunner-500713.onnx",
+                "reward": 61.29629887474908,
+                "creation_time": 1638127973.1457334,
+                "auxillary_file_paths": [
+                    "results\\Tag1\\TagRunner\\TagRunner-500713.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500713,
+            "file_path": "results\\Tag1\\TagRunner.onnx",
+            "reward": 61.29629887474908,
+            "creation_time": 1638127973.1457334,
+            "auxillary_file_paths": [
+                "results\\Tag1\\TagRunner\\TagRunner-500713.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

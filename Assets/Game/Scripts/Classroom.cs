@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.MLAgents;
 
 // This class will be responsible for 
 public class Classroom : MonoBehaviour
@@ -15,6 +16,7 @@ public class Classroom : MonoBehaviour
     public Vector3 classSize;
 
     public GameObject agent;
+    public Agent[] agents;
     public GameObject goal;
 
     public float agentMinSpawnX, agentMaxSpawnX;
@@ -27,6 +29,14 @@ public class Classroom : MonoBehaviour
     private void Start() 
     {
         //ResetClassroom();
+    }
+
+    public void EndEpisodes()
+    {
+        foreach(Agent a in agents)
+        {
+            a.EndEpisode();
+        }
     }
 
     public void ResetClassroom()

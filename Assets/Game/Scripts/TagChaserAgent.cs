@@ -7,7 +7,11 @@ using Unity.MLAgents.Sensors;
 
 public class TagChaserAgent : Agent
 {
+    [SerializeField]TagRunnerAgent runnerAgent;
     [SerializeField]private Vector3 spawnpoint;
+    [SerializeField]private bool randSpawn;
+    [SerializeField]private Vector3 minSpawn;
+    [SerializeField]private Vector3 maxSpawn;
     [SerializeField]private Classroom myClass;
     [SerializeField]private Transform targetTransform;
     [SerializeField]private float goalX;
@@ -20,7 +24,11 @@ public class TagChaserAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        transform.position = spawnpoint;
+        if (randSpawn)
+            transform.localPosition = new Vector3(Random.Range(minSpawn.x, maxSpawn.x), spawnpoint.y, Random.Range(minSpawn.z, maxSpawn.z));
+        else
+            transform.localPosition = spawnpoint;
+        SetReward(0f);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -44,17 +52,11 @@ public class TagChaserAgent : Agent
         // We got closer to our goal
         if (newDistR < lDistFromTarget)
         {
-            AddReward(0.1f);
+            AddReward(10 / newDistR);
         } 
         else
         {
-            AddReward(-0.1f);
-        }
-
-        if (targetTransform.localPosition.x >= goalX)
-        {
-            SetReward(-100f);
-            EndEpisode();
+            AddReward(10 / newDistR * -1);
         }
 
         lDistFromTarget = newDistR;
@@ -69,16 +71,21 @@ public class TagChaserAgent : Agent
 
     private void OnTriggerEnter(Collider other) 
     {
-
+        if (other.CompareTag("Wall"))
+        {
+            // negative reward
+            SetReward(-20000);
+            myClass.EndEpisodes();
+            EndEpisode();
+        }
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.transform.CompareTag("Runner"))
         {
-            SetReward(100f);
+            SetReward(20000);
+            myClass.EndEpisodes();
         }
-
-        EndEpisode();
     }
 }

@@ -876,10 +876,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 1655229073}
   classToSpawn: {fileID: 2614427451801006347, guid: 8cd411dfb2da43343bb6b96816bb6299, type: 3}
-  numToSpawn: 2
-  numColumns: 1
-  xSpacing: 10
-  zSpacing: 30
+  numToSpawn: 8
+  numColumns: 2
+  xSpacing: 20
+  zSpacing: 50
   mainCam: {fileID: 963194225}
   currentCam: {fileID: 0}
   classCamMode: 0

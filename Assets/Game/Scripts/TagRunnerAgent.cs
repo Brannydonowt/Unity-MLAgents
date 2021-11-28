@@ -7,7 +7,12 @@ using Unity.MLAgents.Sensors;
 
 public class TagRunnerAgent : Agent
 {
-    [SerializeField]Vector3 spawnpoint;
+    [SerializeField]private TagChaserAgent chaserAgent;
+
+    [SerializeField]private Vector3 spawnpoint;
+    [SerializeField]private bool randSpawn;
+    [SerializeField]private Vector3 minSpawn;
+    [SerializeField]private Vector3 maxSpawn;
     [SerializeField]private Classroom myClass;
 
     [SerializeField]private Transform chaserTransform;
@@ -23,7 +28,11 @@ public class TagRunnerAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        transform.position = spawnpoint;
+        if (randSpawn)
+            transform.localPosition = new Vector3(Random.Range(minSpawn.x, maxSpawn.x), spawnpoint.y, Random.Range(minSpawn.z, maxSpawn.z));
+        else
+            transform.localPosition = spawnpoint;
+        SetReward(0f);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -46,19 +55,19 @@ public class TagRunnerAgent : Agent
         // We got closer to our goal
         if (newDistG < lDistFromGoal)
         {
-            AddReward(0.1f);
+            AddReward(20 / newDistG);
         } 
         else
         {
-            AddReward(-0.1f);
+            AddReward(20 / newDistG * -1);
         }
 
         lDistFromGoal = newDistG;
 
-        if (newDistC < lDistFromChaser)
-            AddReward(0.1f);
+        if (newDistC > lDistFromChaser)
+            AddReward(10 / newDistC);
         else
-            AddReward(-0.1f);
+            AddReward(10 / newDistC * -1);
 
         lDistFromChaser = newDistC;        
     }
@@ -72,30 +81,30 @@ public class TagRunnerAgent : Agent
 
     private void OnTriggerEnter(Collider other) 
     {
-        /*
+        
         if (other.CompareTag("Wall"))
         {
             // negative reward
-            SetReward(-100f);
+            SetReward(-20000);
+            myClass.EndEpisodes();        
         }
-        */
 
         if (other.CompareTag("Goal"))
         {
             // positive reward
-            SetReward(100f);
+            SetReward(20000f);
+            myClass.EndEpisodes();
         }
-
-        EndEpisode();
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.transform.CompareTag("Chaser"))
         {
-            SetReward(-100f);
+            SetReward(-20000f);
+            myClass.EndEpisodes();
         }
-
-        EndEpisode();
     }
+
+    
 }

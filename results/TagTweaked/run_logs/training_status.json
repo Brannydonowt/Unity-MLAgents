@@ -1,0 +1,87 @@
+{
+    "TagRunner": {
+        "checkpoints": [
+            {
+                "steps": 450981,
+                "file_path": "results\\TagTweaked\\TagRunner\\TagRunner-450981.onnx",
+                "reward": 14320.572640991211,
+                "creation_time": 1638130579.3707201,
+                "auxillary_file_paths": [
+                    "results\\TagTweaked\\TagRunner\\TagRunner-450981.pt"
+                ]
+            },
+            {
+                "steps": 499967,
+                "file_path": "results\\TagTweaked\\TagRunner\\TagRunner-499967.onnx",
+                "reward": 3191.7211672734406,
+                "creation_time": 1638130798.310559,
+                "auxillary_file_paths": [
+                    "results\\TagTweaked\\TagRunner\\TagRunner-499967.pt"
+                ]
+            },
+            {
+                "steps": 500017,
+                "file_path": "results\\TagTweaked\\TagRunner\\TagRunner-500017.onnx",
+                "reward": 3143.194965283076,
+                "creation_time": 1638130798.460368,
+                "auxillary_file_paths": [
+                    "results\\TagTweaked\\TagRunner\\TagRunner-500017.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500017,
+            "file_path": "results\\TagTweaked\\TagRunner.onnx",
+            "reward": 3143.194965283076,
+            "creation_time": 1638130798.460368,
+            "auxillary_file_paths": [
+                "results\\TagTweaked\\TagRunner\\TagRunner-500017.pt"
+            ]
+        }
+    },
+    "TagChaser": {
+        "checkpoints": [
+            {
+                "steps": 450981,
+                "file_path": "results\\TagTweaked\\TagChaser\\TagChaser-450981.onnx",
+                "reward": null,
+                "creation_time": 1638130579.4185941,
+                "auxillary_file_paths": [
+                    "results\\TagTweaked\\TagChaser\\TagChaser-450981.pt"
+                ]
+            },
+            {
+                "steps": 499967,
+                "file_path": "results\\TagTweaked\\TagChaser\\TagChaser-499967.onnx",
+                "reward": 13219.828369916495,
+                "creation_time": 1638130798.3614795,
+                "auxillary_file_paths": [
+                    "results\\TagTweaked\\TagChaser\\TagChaser-499967.pt"
+                ]
+            },
+            {
+                "steps": 500017,
+                "file_path": "results\\TagTweaked\\TagChaser\\TagChaser-500017.onnx",
+                "reward": 13339.67550125122,
+                "creation_time": 1638130798.4164855,
+                "auxillary_file_paths": [
+                    "results\\TagTweaked\\TagChaser\\TagChaser-500017.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500017,
+            "file_path": "results\\TagTweaked\\TagChaser.onnx",
+            "reward": 13339.67550125122,
+            "creation_time": 1638130798.4164855,
+            "auxillary_file_paths": [
+                "results\\TagTweaked\\TagChaser\\TagChaser-500017.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

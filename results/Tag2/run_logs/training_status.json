@@ -1,0 +1,123 @@
+{
+    "TagRunner": {
+        "checkpoints": [
+            {
+                "steps": 499969,
+                "file_path": "results\\Tag2\\TagRunner\\TagRunner-499969.onnx",
+                "reward": 12214.23145673275,
+                "creation_time": 1638135225.9453924,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\TagRunner\\TagRunner-499969.pt"
+                ]
+            },
+            {
+                "steps": 999994,
+                "file_path": "results\\Tag2\\TagRunner\\TagRunner-999994.onnx",
+                "reward": 12177.443546192717,
+                "creation_time": 1638135929.1634297,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\TagRunner\\TagRunner-999994.pt"
+                ]
+            },
+            {
+                "steps": 1499973,
+                "file_path": "results\\Tag2\\TagRunner\\TagRunner-1499973.onnx",
+                "reward": 12673.507412387726,
+                "creation_time": 1638136631.158766,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\TagRunner\\TagRunner-1499973.pt"
+                ]
+            },
+            {
+                "steps": 1999973,
+                "file_path": "results\\Tag2\\TagRunner\\TagRunner-1999973.onnx",
+                "reward": 13719.099166147273,
+                "creation_time": 1638137327.6493876,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\TagRunner\\TagRunner-1999973.pt"
+                ]
+            },
+            {
+                "steps": 2445909,
+                "file_path": "results\\Tag2\\TagRunner\\TagRunner-2445909.onnx",
+                "reward": 14610.877289905186,
+                "creation_time": 1638137943.0595658,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\TagRunner\\TagRunner-2445909.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2445909,
+            "file_path": "results\\Tag2\\TagRunner.onnx",
+            "reward": 14610.877289905186,
+            "creation_time": 1638137943.0595658,
+            "auxillary_file_paths": [
+                "results\\Tag2\\TagRunner\\TagRunner-2445909.pt"
+            ]
+        }
+    },
+    "TagChaser": {
+        "checkpoints": [
+            {
+                "steps": 499969,
+                "file_path": "results\\Tag2\\TagChaser\\TagChaser-499969.onnx",
+                "reward": -8061.2173522949215,
+                "creation_time": 1638135225.976309,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\TagChaser\\TagChaser-499969.pt"
+                ]
+            },
+            {
+                "steps": 999994,
+                "file_path": "results\\Tag2\\TagChaser\\TagChaser-999994.onnx",
+                "reward": -3390.977435225532,
+                "creation_time": 1638135929.1953142,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\TagChaser\\TagChaser-999994.pt"
+                ]
+            },
+            {
+                "steps": 1499973,
+                "file_path": "results\\Tag2\\TagChaser\\TagChaser-1499973.onnx",
+                "reward": -2558.7649620945253,
+                "creation_time": 1638136631.1887193,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\TagChaser\\TagChaser-1499973.pt"
+                ]
+            },
+            {
+                "steps": 1999973,
+                "file_path": "results\\Tag2\\TagChaser\\TagChaser-1999973.onnx",
+                "reward": 1840.4230378360119,
+                "creation_time": 1638137327.6872864,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\TagChaser\\TagChaser-1999973.pt"
+                ]
+            },
+            {
+                "steps": 2445874,
+                "file_path": "results\\Tag2\\TagChaser\\TagChaser-2445874.onnx",
+                "reward": 1428.7507127001338,
+                "creation_time": 1638137943.0126908,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\TagChaser\\TagChaser-2445874.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2445874,
+            "file_path": "results\\Tag2\\TagChaser.onnx",
+            "reward": 1428.7507127001338,
+            "creation_time": 1638137943.0126908,
+            "auxillary_file_paths": [
+                "results\\Tag2\\TagChaser\\TagChaser-2445874.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
